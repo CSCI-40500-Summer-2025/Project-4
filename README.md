@@ -2,6 +2,8 @@
 
 ## Project Vision
 
+For event organizers or management teams who need to find a common date for an event for any number of people. The SORT Event Resource, or SORTER, is a web based availablity tool for groups that provides simple survey tools to invitees, and more robust options for organizers, unlike other services such as WhenAvailable or DatePoll. Our product provides weighting and comparison tools in order to prioritize participants based on the meaningfulness of their participation or attendance as necessary.  
+
 For [customer] who [statement of need/opportunity]. The [product name] is a [category] that [benefit, reason to buy] unlike [competitive alternative]. Our proudct [primary differentiation]
 
 “FOR a mid-sized company's marketing and sales departments WHO need basic CRM functionality, THE CRM-Innovator is a Web-based service THAT provides sales tracking, lead generation, and sales representative support features that improve customer relationships at critical touch points. UNLIKE other services or package software products, OUR product provides very capable services at a moderate cost.”
