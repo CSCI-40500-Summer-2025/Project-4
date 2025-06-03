@@ -2,7 +2,7 @@
 
 ## Project Vision
 
-For event organizers or management teams who need to find a common date for an event for any number of people. The SORT Event Resource, or SORTER, is a web based availablity tool for groups that provides simple survey tools to invitees, and more robust options for organizers, unlike other services such as WhenAvailable or DatePoll. Our product provides weighting and comparison tools in order to prioritize participants based on the meaningfulness of their participation or attendance as necessary while providing an obfuscated front end that is more friendly to attendees.  
+For event organizers or management teams who need to find a common date for an event for any number of people, the SORT Event Resource (SORTER), is a web based availablity tool for groups that provides simple survey tools to invitees, and significantly more robust options for organizers, unlike other services such as WhenAvailable or DatePoll. Our product provides weighting and comparison tools in order to prioritize participants based on the meaningfulness of their participation or attendance as necessary while providing an obfuscated front end that is more friendly to attendees.  
 
 For [customer] who [statement of need/opportunity]. The [product name] is a [category] that [benefit, reason to buy] unlike [competitive alternative]. Our proudct [primary differentiation]
 
