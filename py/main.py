@@ -13,44 +13,46 @@
 # Person class module.
 #
 
+from data import get_data
 from person import Person
 
 
-def venv_demo():
-    print("Script is running.")
-    print("Script is finished running.")
-
-
 def test_person_class():
+    data = get_data()
+    data = data[1::]
     people = []
-    person_1 = Person("John Doe", "john@example.com")
-    person_2 = Person("Alice Smith", "alice.smith@test.org")
-    person_3 = Person("Bob Johnson", "bjohnson@mail.net")
-    person_4 = Person("Emma Wilson", "emma.w@demo.com", 7)
-    person_5 = Person("Michael Brown", "michael.b@sample.io")
-    person_6 = Person("Sarah Davis", "sarahd@fake.org", 9)
-    person_7 = Person("David Lee", "dlee@example.org", 0)
-    person_8 = Person("Olivia Taylor", "otaylor@testmail.com", 6)
-    person_9 = Person("James Miller", "james.m@demo.org", 4)
-    person_10 = Person("Sophia Clark", "s.clark@example.net", 8)
-    people.append(person_1)
-    people.append(person_2)
-    people.append(person_3)
-    people.append(person_4)
-    people.append(person_5)
-    people.append(person_6)
-    people.append(person_7)
-    people.append(person_8)
-    people.append(person_9)
-    people.append(person_10)
-    print(people)
+    for item in data:
+        print(item)
+        person = Person(item[0], item[1])
+        people.append(person)
+
+    mod_weights = input(
+        "Would you like to change any weights? Type y/Y to change weights: "
+    )
+
+    if mod_weights == "y" or mod_weights == "Y":
+        new_people = []
+        for person in people:
+            person.show_fields()
+            change_weight = input(
+                f"Would you like to change {person.get_name()}'s weight?."
+                " If yes, type new weight. If no, leave blank: "
+            )
+            if change_weight.isdigit():
+                change_weight = int(change_weight)
+                if change_weight >= 0 and change_weight <= 10:
+                    person.set_weight(change_weight)
+                    print(f"Updated {person.get_name()}:")
+                    person.show_fields()
+            print("\n")
+            new_people.append(person)
+        people = new_people
     for person in people:
         person.show_fields()
 
 
 def main():
-    # test_person_class()
-    venv_demo()
+    test_person_class()
 
 
 if __name__ == "__main__":
