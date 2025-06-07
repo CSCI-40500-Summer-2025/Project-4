@@ -17,11 +17,13 @@
 class Person:
 
     DEFAULT_WEIGHT: int = 5
+    DEFAULT_BOOLS: list = []
 
-    def __init__(self, name, email, weight=DEFAULT_WEIGHT) -> None:
+    def __init__(self, name, weight=DEFAULT_WEIGHT, bools=DEFAULT_BOOLS) -> None:
         self.name = name
-        self.email = email
+        self.email = "example@email.com"
         self.weight = weight
+        self.bools = bools
         # TODO: more fields (example: address, phone #, age, affiliation, etc.)
 
     def get_name(self) -> str:
@@ -32,6 +34,9 @@ class Person:
 
     def get_weight(self) -> int:
         return self.weight
+
+    def get_bools(self) -> list:
+        return self.bools
 
     def set_name(self, name: str) -> None:
         self.name = name
@@ -44,7 +49,11 @@ class Person:
         self.weight = weight
         # future: negative numbers, floating point numbers
 
+    def set_bools(self, bools: list) -> None:
+        self.bools = bools
+
     def show_fields(self) -> None:
         print("Name: ", self.name)
-        print("Email: ", self.email)
+        # print("Email: ", self.email)
         print("Weight", self.weight)
+        print("Bools", self.bools)
