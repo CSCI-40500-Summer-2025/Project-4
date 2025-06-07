@@ -55,16 +55,20 @@
 #   Hide                            Hide the subsequent commands from the output
 #   Show                            Show the subsequent commands in the output
 
-Output demo.gif
+Output assets/demo.gif
 
 Require echo
 
 Set Shell "bash"
-Set FontSize 14
+Set FontSize 28
 Set FontFamily "Fira Code"
+Set Theme "GitHub Dark"
 Set Width 1200
 Set Height 600
 
-Type "python3 main.py" Sleep 500ms  Enter
+Type "source venv/bin/activate" Sleep 500ms Enter
+Type "python3 main.py" Sleep 500ms Enter
+Type "deactivate" Sleep 500ms Enter
+
 
 Sleep 5s
