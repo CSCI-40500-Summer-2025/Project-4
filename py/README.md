@@ -2,25 +2,37 @@
 
 ## Run Scripts
 
-1. Activate the `venv`:
+Must have `python3` installed.
+
+1. Create the virtual environment.
+
+   ```shell
+   python3 -m venv venv
+   ```
+
+2. Activate the `venv`:
 
    ```shell
    source venv/bin/activate
    ```
 
-2. Run `main.py`:
+3. Install dependencies.
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+4. Run `main.py`:
 
    ```shell
    python3 main.py
    ```
 
-3. Deactivate the `venv`
+5. Deactivate the `venv`
 
    ```shell
    deactivate
    ```
-
-   ![run.gif](assets/run.gif)
 
 ## Log
 
