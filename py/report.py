@@ -70,7 +70,5 @@ def generate_report(people: List[Person]) -> None:
         print(
             f"{bool_labels[date_idx]}: {present_count} of {total_people} available. "
             f"Average Score: {avg_score:.1f}"
-            #f"Date {date_idx + 1}: {present_count} of {total_people} available. "
-            #f"Average Score: {avg_score:.1f}"
         )
 
