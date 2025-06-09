@@ -42,6 +42,24 @@ def avg_score(people: List[Person]) -> None:
             print(f"Date {date_idx + 1}: No attendees.")
 
 
+def generate_flags(people: List[Person], date_idx: int) -> str:
+    """Generate flags for a specific date based on custom rules."""
+    flags = []
+
+    # Rule 1: Check if any high-weight person (>=8) is absent
+    high_weight_absent = any(
+        p.get_weight() >= 9 and p.get_bools()[date_idx] == 0
+        for p in people
+    )
+    if high_weight_absent:
+        flags.append("⚠️ Missing Critical Personnel")
+
+    # Add more rules here (e.g., low attendance, score variance, etc.)
+    # flags.append("⚠️ New flag")
+
+    return " | ".join(flags) if flags else ""
+
+
 def generate_report(people: List[Person]) -> None:
 
     #get date labels from data cache
@@ -59,7 +77,7 @@ def generate_report(people: List[Person]) -> None:
         present_count = sum(1 for person in people if person.get_bools()[date_idx] == 1)
         total_people = len(people)
 
-        # Average score (only for present attendees)
+        # avg score for this date/index, exclude 0's
         weighted_scores = [
             person.get_weight()
             for person in people
@@ -67,8 +85,12 @@ def generate_report(people: List[Person]) -> None:
         ]
         avg_score = sum(weighted_scores) / len(weighted_scores) if weighted_scores else 0
 
+        #pull flags for current date index
+        flags = generate_flags(people, date_idx)
+
         print(
-            f"{bool_labels[date_idx]}: {present_count} of {total_people} available. "
-            f"Average Score: {avg_score:.1f}"
+            f"{bool_labels[date_idx]}: {present_count} of {total_people} available. | "
+            f"Average Score: {avg_score:.1f} | "
+            f"{flags}"
         )
 

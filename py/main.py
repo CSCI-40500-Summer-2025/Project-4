@@ -21,6 +21,8 @@ def people_create() -> list:
         person.show_fields()
 
     mod_weights = input(
+        "Weights are 0-10, default is 5. \n"
+        "A score of 9 or more is considered critical personnel.\n"
         "Would you like to change any weights? Type y/Y to change weights: "
     )
 
@@ -36,8 +38,7 @@ def change_weights(people: list) -> list:
     for person in people:
         person.show_fields()
         change_weight = input(
-            f"Would you like to change {person.get_name()}'s weight?."
-            " If yes, type new weight. If no, leave blank: "
+            f"Change {person.get_name()}'s weight? Type new weight, or leave blank:"
         )
         if change_weight.isdigit():
             old_weight = person.get_weight()
