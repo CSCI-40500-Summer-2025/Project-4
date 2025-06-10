@@ -2,16 +2,9 @@
 # -*- coding: utf-8 -*-
 
 # File: person.py
-# Author: Ragib Asif
-# Email: ragib.asif30@myhunter.cuny.edu
-# GitHub: https://github.com/ragibasif
-# LinkedIn: https://www.linkedin.com/in/ragibasif/
-# SPDX-License-Identifier: MIT
-# Copyright (c) 2025 Ragib Asif
-# Version 1.0.0
-#
+# Author: Ragib Asif, Jason Ongjoco
 # Person class module.
-#
+
 
 
 class Person:
@@ -52,8 +45,11 @@ class Person:
     def set_bools(self, bools: list) -> None:
         self.bools = bools
 
+    def trunc_data(self) -> None:
+        print("Name: ", self.name, "   Weight: ", self.weight)
+
     def show_fields(self) -> None:
-        print("Name: ", self.name)
-        # print("Email: ", self.email)
-        print("Weight", self.weight)
-        print("Bools", self.bools)
+        print("Name: ", self.name, "   Weight: ", self.weight)
+        #print("Email: ", self.email)
+        #print("Weight", self.weight)
+        #print("Bools", self.bools)
