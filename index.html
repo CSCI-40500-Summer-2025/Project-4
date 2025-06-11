@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DatePoll Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Event Availability Poll</h1>
+
+  <form id="pollForm">
+    <label for="organizerName">Organizer Name:</label><br />
+    <input type="text" id="organizerName" name="organizerName" required /><br /><br />
+
+    <label for="eventTitle">Event Title:</label><br />
+    <input type="text" id="eventTitle" name="eventTitle" required /><br /><br />
+
+    <label for="dates">Enter Possible Dates (one per line):</label><br />
+    <textarea
+      id="dates"
+      name="dates"
+      rows="5"
+      cols="40"
+      placeholder="e.g., June 10\nJune 12\nJune 15"
+      required
+    ></textarea><br /><br />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Where results and invitee form will go -->
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
