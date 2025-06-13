@@ -1,5 +1,7 @@
 # Python Scripts
 
+![demo.gif](./assets/demo.gif)
+
 ## Run Scripts
 
 Must have `python3` installed.
@@ -34,4 +36,4 @@ Must have `python3` installed.
    deactivate
    ```
 
-   ![assets/run.gif](assets/run.gif)
+   ![assets/run.gif](./assets/run.gif)

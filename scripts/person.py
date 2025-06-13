@@ -9,14 +9,14 @@
 class Person:
 
     DEFAULT_WEIGHT: int = 5
-    DEFAULT_BOOLS: list[tuple[str, bool]] = []
+    DEFAULT_BOOLS: list[int] = []
     DEFAULT_EMAIL: str = "example@email.com"
 
-    def __init__(self, name: str, email: str = DEFAULT_EMAIL, weight: int = DEFAULT_WEIGHT, bools: list[tuple[str, bool]] = DEFAULT_BOOLS) -> None:
+    def __init__(self, name: str, email: str = DEFAULT_EMAIL, weight: int = DEFAULT_WEIGHT, bools: list[int] = DEFAULT_BOOLS) -> None:
         self.name: str = name
         self.email: str = email
         self.weight: int = weight
-        self.bools: list[tuple[str, bool]] = bools
+        self.bools: list[int] = bools
         # TODO: more fields (example: address, phone #, age, affiliation, etc.)
 
     def get_name(self) -> str:
@@ -28,11 +28,8 @@ class Person:
     def get_weight(self) -> int:
         return self.weight
 
-    def get_bool_values(self) -> list[bool]:
-        temp_list: list[bool] = list()
-        for _, value in self.bools:
-            temp_list.append(bool(value))
-        return temp_list
+    def get_bools(self) -> list[int]:
+        return self.bools
 
     def set_name(self, name: str) -> None:
         self.name = name
@@ -45,7 +42,7 @@ class Person:
         self.weight = weight
         # future: negative numbers, floating point numbers
 
-    def set_bools(self, bools: list[tuple[str, bool]]) -> None:
+    def set_bools(self, bools: list[int]) -> None:
         self.bools = bools
 
     def trunc_data(self) -> None:

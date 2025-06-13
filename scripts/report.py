@@ -12,11 +12,11 @@ def attendance(people: list[Person]) -> None:
         return
 
     # Determine the number of dates (length of bools list)
-    num_dates = len(people[0].get_bool_values()) if people else 0
+    num_dates = len(people[0].get_bools()) if people else 0
 
     for date_idx in range(num_dates):
         present_count = sum(
-            1 for person in people if person.get_bool_values()[date_idx] == 1
+            1 for person in people if person.get_bools()[date_idx] == 1
         )
         total_people = len(people)
         print(f"Date {date_idx + 1}: {present_count} of {total_people} available.")
@@ -28,12 +28,12 @@ def avg_score(people: list[Person]) -> None:
         print("No data to process.")
         return
 
-    num_dates = len(people[0].get_bool_values()) if people else 0
+    num_dates = len(people[0].get_bools()) if people else 0
 
     for date_idx in range(num_dates):
         weighted_scores = []
         for person in people:
-            if person.get_bool_values()[date_idx] == 1:  # Only count if present
+            if person.get_bools()[date_idx] == 1:  # Only count if present
                 weighted_scores.append(person.get_weight())
 
         if weighted_scores:
@@ -49,7 +49,7 @@ def generate_flags(people: list[Person], date_idx: int) -> str:
 
     # Rule 1: Check if any high-weight person (>=8) is absent
     high_weight_absent = any(
-        p.get_weight() >= 9 and p.get_bool_values()[date_idx] == 0 for p in people
+        p.get_weight() >= 9 and p.get_bools()[date_idx] == 0 for p in people
     )
     if high_weight_absent:
         flags.append("⚠️ Missing Critical Personnel")
@@ -70,13 +70,13 @@ def generate_report(people: list[Person]) -> None:
         print("No data to process.")
         return
 
-    num_dates = len(people[0].get_bool_values()) if people else 0
+    num_dates = len(people[0].get_bools()) if people else 0
 
     print("\n--- Attendance Report ---")
     for date_idx in range(num_dates):
         # Attendance (x of y)
         present_count = sum(
-            1 for person in people if person.get_bool_values()[date_idx] == 1
+            1 for person in people if person.get_bools()[date_idx] == 1
         )
         total_people = len(people)
 
@@ -84,7 +84,7 @@ def generate_report(people: list[Person]) -> None:
         weighted_scores = [
             person.get_weight()
             for person in people
-            if person.get_bool_values()[date_idx] == 1
+            if person.get_bools()[date_idx] == 1
         ]
         avg_score = (
             sum(weighted_scores) / len(weighted_scores) if weighted_scores else 0

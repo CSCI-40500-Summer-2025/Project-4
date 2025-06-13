@@ -1,10 +1,16 @@
+"""
+Imports the data from a csv file and formats it.
+"""
 
 import csv
 
 
 def import_data() -> list[object]:
+
+    csv_file: str = "data/sample.csv"
+
     data: list[object] = []
-    with open(file="data/sample.csv", newline="", encoding="utf_8") as csvfile:
+    with open(file=csv_file, newline="", encoding="utf_8") as csvfile:
         dummyreader = csv.reader(csvfile)
 
         for row in dummyreader:
@@ -27,6 +33,7 @@ def format_data(data: list[object]) -> list[object]:
         bool_names.append(str(value))
 
     global bool_labels
+
     bool_labels = bool_names
     for items in data[1::]:
         new_items: list[object] = []
@@ -40,14 +47,7 @@ def format_data(data: list[object]) -> list[object]:
             else:
                 new_items.append(item)
 
-        # creating name/value pairs for boolean label and boolean value
-        bool_label_item: list[tuple[str, bool]] = []
-        for index, label in enumerate(bool_names):
-            temp_tuple: tuple[str, bool] = (
-                str(label), bool(bool_items[index]))
-            bool_label_item.append(temp_tuple)
-
-        new_items.append(bool_label_item)
+        new_items.append(bool_items)
         new_data.append(new_items[1::])
     return new_data
 

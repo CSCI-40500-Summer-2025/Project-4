@@ -55,12 +55,12 @@
 #   Hide                            Hide the subsequent commands from the output
 #   Show                            Show the subsequent commands in the output
 
-Output assets/demo.gif
+Output demo.gif
 
 Require echo
 
-Set Shell "bash"
-Set FontSize 28
+Set Shell "zsh"
+Set FontSize 24
 Set FontFamily "Fira Code"
 Set Theme "GitHub Dark"
 Set Width 1200
@@ -68,12 +68,12 @@ Set Height 600
 Set WindowBar Colorful
 Set BorderRadius 10
 
-Type "python3 -m venv venv" Sleep 500ms Enter Sleep 1s
-Type "source venv/bin/activate" Sleep 500ms Enter Sleep 500ms
-Type "pip install -r requirements.txt" Sleep 500ms Enter Sleep 500ms
 Type "python3 main.py" Sleep 500ms Enter Sleep 500ms
-Type "deactivate" Sleep 500ms Enter
-
+Type "y" Sleep 500ms Enter Sleep 500ms
+Sleep 500ms Enter Sleep 500ms
+Type "10" Sleep 500ms Enter Sleep 500ms
+Type "9" Sleep 500ms Enter Sleep 500ms
+Type "6" Sleep 500ms Enter Sleep 500ms
 
 
 Sleep 5s
