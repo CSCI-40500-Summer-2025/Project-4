@@ -4,7 +4,7 @@
 
 For event organizers or management teams who need to find a common date for an event for any number of people, the SORT Event Resource (SORTER), is a web based availability tool for groups that provides simple survey tools to invitees, and significantly more robust options for organizers, unlike other services such as WhenAvailable or DatePoll. Our produce provides weighting anr comparison tools in order to prioritize participants based on the meaningfulness of their participation or attendance as necessary while providing an obfuscated front end that is more friendly to attendees.
 
-## Prototyping Directions for Demonstration
+## Prototype Directions for Demonstration
 
 You are organizing a small event. We have provided hypothetical RSVP data for a small number of people.
 1. Imagine you know everyone and they have different value to **YOUR** event.
@@ -13,6 +13,8 @@ You are organizing a small event. We have provided hypothetical RSVP data for a 
    - **5** is the default value (if no value is entered, this will remain unchanged)
    - **10** being invaluable (e.g., asking your TA or Professor to lead a study group)
 3. Download project files, run the program, follow directions, and receive the report.
+   Note: If running from python, you only need the 4 .py files in the /py directory, and the data directory with only sample.csv in it
+         The program looks for sample.csv inside the data directory. This will be changed to the same directory in future releases
 
 ## Prototype Directions for Realistic Use
 
@@ -37,43 +39,20 @@ The organizer will create a Google Form to collect Yes/No responses from their i
 
 ---
 
-## 🔧 How to Use This Prototype (Frontend by Shehryar)
+## Frontend Prototype
 
-This is a simple proof-of-concept web prototype for collecting group availability.
+A proof of concept web prototype that shows how a simple UI can provide improved functionality.
 
-### ✅ Organizer Instructions:
-1. Enter your **name** and **event title**.
-2. In the **date input box**, type possible event dates — one per line:
+Instructions for demo:
+1. Open the `index.html` file in any browser (e.g., Chrome, Safari).
+2. The first half of the UI shows simplified organizer input with fields:
+   - Organizer Name
+   - Event title
+   - Dates: Enter one date per line in any forma
+3. Click Submit. The simplified invitee UI then shows
+   - Each invite will enter their name and choose yes/no for each date in a dropdown box
+4. Click Submit to enter the next invitee information.
 
-June 10
-June 12
-June 14
-
-3. Click **Submit** to generate the invitee response form.
-
-> Note: The organizer name and event title are displayed but not currently used in the output.
-
----
-
-### 🧍 Invitee Instructions:
-1. Enter your **name**.
-2. Choose **Yes/No** for each available date using dropdowns.
-3. Click **Submit Response** to record your response.
-4. All submitted responses will be displayed below.
-
----
-
-### ⚙️ How to Run the Prototype:
-- Open the `index.html` file in any browser (e.g., Chrome, Safari).
-- No setup or installation is required.
+Notes:
 - This version does **not include** date weights or output saving.
-
----
-
-### 💡 Future Improvements:
-- Export responses as CSV.
-- Add backend to store results.
-- Rank dates based on majority availability.
-
-
 
