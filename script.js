@@ -1,13 +1,17 @@
-document.getElementById('pollForm').addEventListener('submit', function (e) {
+// Author: Shehryar
+document.getElementById("pollForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const organizerName = document.getElementById('organizerName').value.trim();
-  const eventTitle = document.getElementById('eventTitle').value.trim();
-  const datesRaw = document.getElementById('dates').value.trim();
+  const organizerName = document.getElementById("organizerName").value.trim();
+  const eventTitle = document.getElementById("eventTitle").value.trim();
+  const datesRaw = document.getElementById("dates").value.trim();
 
-  const dates = datesRaw.split('\n').map(date => date.trim()).filter(date => date !== '');
+  const dates = datesRaw
+    .split("\n")
+    .map((date) => date.trim())
+    .filter((date) => date !== "");
 
-  const resultDiv = document.getElementById('result');
+  const resultDiv = document.getElementById("result");
 
   let html = `
     <h3>Poll Created</h3>
@@ -15,7 +19,7 @@ document.getElementById('pollForm').addEventListener('submit', function (e) {
     <p><strong>Event:</strong> ${eventTitle}</p>
     <p><strong>Dates:</strong></p>
     <ul>
-      ${dates.map(date => `<li>${date}</li>`).join('')}
+      ${dates.map((date) => `<li>${date}</li>`).join("")}
     </ul>
 
     <hr>
@@ -34,7 +38,7 @@ document.getElementById('pollForm').addEventListener('submit', function (e) {
         </select><br /><br />
       `
         )
-        .join('')}
+        .join("")}
       <button type="submit">Submit Response</button>
     </form>
 
@@ -46,29 +50,33 @@ document.getElementById('pollForm').addEventListener('submit', function (e) {
   const allResponses = [];
 
   setTimeout(() => {
-    const inviteeForm = document.getElementById('inviteeForm');
-    inviteeForm.addEventListener('submit', function (e) {
+    const inviteeForm = document.getElementById("inviteeForm");
+    inviteeForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const name = document.getElementById('inviteeName').value.trim();
+      const name = document.getElementById("inviteeName").value.trim();
       const responses = dates.map((_, index) => {
-        const val = document.querySelector(`select[name="response-${index}"]`).value;
+        const val = document.querySelector(
+          `select[name="response-${index}"]`
+        ).value;
         return `${dates[index]}: ${val}`;
       });
 
       allResponses.push({ name, responses });
 
       const output = allResponses
-        .map((entry, i) => `
+        .map(
+          (entry, i) => `
           <div style="margin-bottom: 20px;">
             <h4>Response #${i + 1}</h4>
             <p><strong>Name:</strong> ${entry.name}</p>
-            <ul>${entry.responses.map(r => `<li>${r}</li>`).join('')}</ul>
+            <ul>${entry.responses.map((r) => `<li>${r}</li>`).join("")}</ul>
           </div>
-        `)
-        .join('');
+        `
+        )
+        .join("");
 
-      document.getElementById('inviteeResult').innerHTML = output;
+      document.getElementById("inviteeResult").innerHTML = output;
       inviteeForm.reset();
     });
   }, 100);
