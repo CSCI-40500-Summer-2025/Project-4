@@ -1,16 +1,19 @@
+# File: data.py
+# Author(s): Ragib Asif, Jason Ongjoco
+
 """
 Imports the data from a csv file and formats it.
 """
 
 import csv
 
+CSV_FILE: str = "data.csv"
+
 
 def import_data() -> list[object]:
 
-    csv_file: str = "data/sample.csv"
-
     data: list[object] = []
-    with open(file=csv_file, newline="", encoding="utf_8") as csvfile:
+    with open(file=CSV_FILE, newline="", encoding="utf_8") as csvfile:
         dummyreader = csv.reader(csvfile)
 
         for row in dummyreader:
