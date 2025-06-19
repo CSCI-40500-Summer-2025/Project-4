@@ -19,7 +19,7 @@ def people_create() -> list[Person]:
     for item in data:
         person = Person(str(item[0]), bools=item[1])
         people.append(person)
-        person.dump_memory()
+        person.trunc_data()
 
     mod_weights = input(
         "Weights are 0-10, default is 5. \n"
@@ -28,9 +28,10 @@ def people_create() -> list[Person]:
     )
 
     if mod_weights == "y" or mod_weights == "Y":
+        print("\n")
         people: list[Person] = change_weights(people)
     for person in people:
-        person.dump_memory()
+        person.trunc_data()
 
     return people
 
@@ -39,9 +40,9 @@ def change_weights(people: list[Person]) -> list[Person]:
 
     new_people: list[Person] = []
     for person in people:
-        person.dump_memory()
+        person.trunc_data()
         change_weight = input(
-            f"Change {person.get_name()}'s weight? Type new weight, or leave blank: "
+            f"Change {person.get_name()}'s weight? Type new weight, or leave blank:"
         )
         if change_weight.isdigit():
             old_weight: int = person.get_weight()
@@ -49,8 +50,7 @@ def change_weights(people: list[Person]) -> list[Person]:
             if change_weight >= 0 and change_weight <= 10:
                 person.set_weight(change_weight)
                 print(
-                    f"Updated {person.get_name()} from {old_weight} to {person.get_weight()}")
-        print("\n")
+                    f"Updated {person.get_name()} from {old_weight} to {person.get_weight()} \n")
         new_people.append(person)
     people = new_people
     return people
