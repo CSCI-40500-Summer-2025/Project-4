@@ -51,3 +51,13 @@ Must have `python3` installed.
    ```
 
    ![assets/run.gif](./assets/run.gif)
+
+## pyinstaller
+
+### MacOS
+
+To create an executable for MacOS, run the following command:
+
+```shell
+pyinstaller --add-data 'data.csv:data.csv' --onefile main.py
+```
