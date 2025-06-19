@@ -4,6 +4,12 @@
 
 For event organizers or management teams who need to find a common date for an event for any number of people, the SORT Event Resource (SORTER), is a web based availability tool for groups that provides **simple** tools to invitees, and **significantly more robust** options for organizers, unlike other services such as WhenAvailable or DatePoll. Our product provides weighting **and** comparison in order to prioritize participants based on the meaningfulness of their contribution  while providing an obfuscated front end that is more friendly to attendees.
 
+## Prototype Directions for Windows
+
+Folow directions below but instead of using .py files, simply download "main.exe" and "data.csv", ensure they are in the same folder, and run.
+
+For practical use, rename your google form .csv to "data.csv" and run main.exe in the same folder.
+
 ## Prototype Directions for Demonstration
 
 You are organizing a small event. We have provided hypothetical RSVP data for a small number of people.
