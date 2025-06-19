@@ -9,16 +9,17 @@
 
 from data import import_data
 from person import Person
-from py.report import generate_report
+from report import generate_report
 
 
-def people_create() -> list:
-    data: list = import_data()
-    people = []
+def people_create() -> list[Person]:
+
+    data: list[object] = import_data()
+    people: list[Person] = []
     for item in data:
-        person = Person(item[0], bools=item[1])
+        person = Person(str(item[0]), bools=item[1])
         people.append(person)
-        person.show_fields()
+        person.dump_memory()
 
     mod_weights = input(
         "Weights are 0-10, default is 5. \n"
@@ -27,35 +28,39 @@ def people_create() -> list:
     )
 
     if mod_weights == "y" or mod_weights == "Y":
-        people: list = change_weights(people)
+        people: list[Person] = change_weights(people)
     for person in people:
-        person.show_fields()
+        person.dump_memory()
+
     return people
 
 
-def change_weights(people: list) -> list:
-    new_people = []
+def change_weights(people: list[Person]) -> list[Person]:
+
+    new_people: list[Person] = []
     for person in people:
-        person.show_fields()
+        person.dump_memory()
         change_weight = input(
-            f"Change {person.get_name()}'s weight? Type new weight, or leave blank:"
+            f"Change {person.get_name()}'s weight? Type new weight, or leave blank: "
         )
         if change_weight.isdigit():
-            old_weight = person.get_weight()
+            old_weight: int = person.get_weight()
             change_weight = int(change_weight)
             if change_weight >= 0 and change_weight <= 10:
                 person.set_weight(change_weight)
-                print(f"Updated {person.get_name()} from {old_weight} to {person.get_weight()}")
+                print(
+                    f"Updated {person.get_name()} from {old_weight} to {person.get_weight()}")
         print("\n")
         new_people.append(person)
     people = new_people
     return people
 
 
-def main():
-    # import_data()
-    people = people_create()
-    generate_report(people)
+def main() -> None:
+    """Entry point of the program."""
+
+    people: list[Person] = people_create()
+    generate_report(people=people)
 
 
 if __name__ == "__main__":

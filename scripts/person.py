@@ -6,17 +6,17 @@
 # Person class module.
 
 
-
 class Person:
 
     DEFAULT_WEIGHT: int = 5
-    DEFAULT_BOOLS: list = []
+    DEFAULT_BOOLS: list[int] = []
+    DEFAULT_EMAIL: str = "example@email.com"
 
-    def __init__(self, name, weight=DEFAULT_WEIGHT, bools=DEFAULT_BOOLS) -> None:
-        self.name = name
-        self.email = "example@email.com"
-        self.weight = weight
-        self.bools = bools
+    def __init__(self, name: str, email: str = DEFAULT_EMAIL, weight: int = DEFAULT_WEIGHT, bools: list[int] = DEFAULT_BOOLS) -> None:
+        self.name: str = name
+        self.email: str = email
+        self.weight: int = weight
+        self.bools: list[int] = bools
         # TODO: more fields (example: address, phone #, age, affiliation, etc.)
 
     def get_name(self) -> str:
@@ -28,7 +28,7 @@ class Person:
     def get_weight(self) -> int:
         return self.weight
 
-    def get_bools(self) -> list:
+    def get_bools(self) -> list[int]:
         return self.bools
 
     def set_name(self, name: str) -> None:
@@ -42,14 +42,15 @@ class Person:
         self.weight = weight
         # future: negative numbers, floating point numbers
 
-    def set_bools(self, bools: list) -> None:
+    def set_bools(self, bools: list[int]) -> None:
         self.bools = bools
 
     def trunc_data(self) -> None:
         print("Name: ", self.name, "   Weight: ", self.weight)
 
-    def show_fields(self) -> None:
-        print("Name: ", self.name, "   Weight: ", self.weight)
-        #print("Email: ", self.email)
-        #print("Weight", self.weight)
-        #print("Bools", self.bools)
+    def dump_memory(self) -> None:
+        """DEBUGGING: This function shows whats currently stored in all the variables of the class."""
+        print("Name: ", self.name)
+        print("Email: ", self.email)
+        print("Weight: ", self.weight)
+        print("Bools: ", self.bools)

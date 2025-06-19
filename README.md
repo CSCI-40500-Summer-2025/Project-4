@@ -7,6 +7,7 @@ For event organizers or management teams who need to find a common date for an e
 ## Prototype Directions for Demonstration
 
 You are organizing a small event. We have provided hypothetical RSVP data for a small number of people.
+
 1. Imagine you know everyone and they have different value to **YOUR** event.
 2. You will be asked to rate their value to **YOUR** event on a scale of 0-10:
    - **0** meaning no value (e.g., asking your ballet teacher to help fix your transmission)
@@ -22,7 +23,7 @@ You are organizing a small event. We have provided hypothetical RSVP data for a 
    - A short answer field for **name or email**
    - A "Multiple Choice Grid":
      - **Rows**: Available dates
-     - **Columns**: "Yes" or "No" (*case-sensitive!*)
+     - **Columns**: "Yes" or "No" (_case-sensitive!_)
    - Example: [Google Form Template](https://docs.google.com/forms/d/e/1FAIpQLSe7uA8irq7unqNzl2SWCOUatV7FOAupqzVya9cqleOLAMsHkQ/viewform)
 2. **After responses are collected**:
    - Go to the form responses tab and click "Link to Sheets"
@@ -36,8 +37,6 @@ You are organizing a small event. We have provided hypothetical RSVP data for a 
 We have created an event organizer that allows prioritizing contributors vs observers. We will be using existing web software, Google Forms, to collect data, and then allowing an event organizer to prioritize the attendance of participants and creators vs observers or learners.
 
 The organizer will create a Google Form to collect Yes/No responses from their invitees on dates that they choose. After responses are collected, the organizer will feed the data through our prototype and assign weights as needed to essential personnel. The organizer will then be given a very brief report on the best dates for the event.
-
----
 
 ## Frontend Prototype
 
@@ -55,4 +54,3 @@ Instructions for demo:
 
 Notes:
 - This version does **not include** date weights or output saving.
-
