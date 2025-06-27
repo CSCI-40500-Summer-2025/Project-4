@@ -52,7 +52,7 @@ def generate_flags(people: list[Person], date_idx: int) -> str:
         p.get_weight() >= 9 and p.get_bools()[date_idx] == 0 for p in people
     )
     if high_weight_absent:
-        flags.append("⚠️ Missing Critical Personnel")
+        flags.append("⚠️ Missing VIPs")
 
     # Add more rules here (e.g., low attendance, score variance, etc.)
     # flags.append("⚠️ New flag")

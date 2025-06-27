@@ -23,8 +23,9 @@ def people_create() -> list[Person]:
 
     mod_weights = input(
         "Weights are 0-10, default is 5. \n"
-        "A score of 9 or more is considered critical personnel.\n"
-        "Would you like to change any weights? Type y/Y to change weights: "
+        "A score of 9 or more will be considered a VIP.\n"
+        "If you would like a simplified report. Press <Enter> \n"
+        "To change any weights from default of 5, type 'y or 'Y': "
     )
 
     if mod_weights == "y" or mod_weights == "Y":
@@ -42,7 +43,7 @@ def change_weights(people: list[Person]) -> list[Person]:
     for person in people:
         person.trunc_data()
         change_weight = input(
-            f"Change {person.get_name()}'s weight? Type new weight, or leave blank:"
+            f"Change {person.get_name()}'s weight? Enter new weight, or leave blank:"
         )
         if change_weight.isdigit():
             old_weight: int = person.get_weight()
