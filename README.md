@@ -4,24 +4,29 @@
 
 For event organizers or management teams who need to find a common date for an event for any number of people, the SORT Event Resource (SORTER), is a web based availability tool for groups that provides **simple** tools to invitees, and **significantly more robust** options for organizers, unlike other services such as WhenAvailable or DatePoll. Our product provides weighting **and** comparison in order to prioritize participants based on the meaningfulness of their contribution  while providing an obfuscated front end that is more friendly to attendees.
 
-## Prototype Directions for Windows
-
-Folow directions below but instead of using .py files, simply download "main.exe" and "data.csv", ensure they are in the same folder, and run.
-
-For practical use, rename your google form .csv to "data.csv" and run main.exe in the same folder.
-
-## Prototype Directions for Demonstration
+## Prototype Concept
 
 You are organizing a small event. We have provided hypothetical RSVP data for a small number of people.
+This tool is also ready for use with your own RSVP data taken directly from a Google Form.
 
 1. Imagine you know everyone and they have different value to **YOUR** event.
 2. You will be asked to rate their value to **YOUR** event on a scale of 0-10:
    - **0** meaning no value (e.g., asking your ballet teacher to help fix your transmission)
    - **5** is the default value (if no value is entered, this will remain unchanged)
    - **10** being invaluable (e.g., asking your TA or Professor to lead a study group)
-3. Download project files, run the program, follow directions, and receive the report.
-   Note: If running from python, you only need the 4 .py files in the /py directory, and the data directory with only sample.csv in it
-         The program looks for sample.csv inside the data directory. This will be changed to the same directory in future releases
+
+## Prototype Files for Windows Executable
+
+From the "windows_portable" folder, download all 3 files.
+"main.exe" "data.csv" "run.bat"
+
+Make sure they are in the same folder, and run "run.bat"
+If you are providing your own data from google, follow the directions below.
+
+## Prototype Files for Python
+
+1. From the "scripts" directory, download all .py files AND data.csv
+2. Run main.py
 
 ## Prototype Directions for Realistic Use
 
@@ -35,7 +40,7 @@ You are organizing a small event. We have provided hypothetical RSVP data for a 
    - Go to the form responses tab and click "Link to Sheets"
    - Choose "Create a new spreadsheet" with any name
    - In the spreadsheet, go to File → Download → Comma Separated Values (.csv)
-   - Rename this file `data.csv` and place it in the same folder as the project files
+   - Rename this file `data.csv` and place it in the same folder as the project files INSTEAD of the data.csv provided in the repo
 3. **Run the program** and follow the directions.
 
 # Prototyping
