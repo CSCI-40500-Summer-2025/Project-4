@@ -1,6 +1,19 @@
 // Author: Shehryar
 
-// Handle poll form
+// Toggle View Logic
+function showOrganizer() {
+  document.getElementById("organizerSection").style.display = "block";
+  document.getElementById("inviteeSection").style.display = "none";
+}
+
+function showInvitee() {
+  document.getElementById("organizerSection").style.display = "none";
+  document.getElementById("inviteeSection").style.display = "block";
+}
+
+// ==========================
+// Organizer Poll Form Logic
+// ==========================
 document.getElementById("pollForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -85,7 +98,7 @@ document.getElementById("pollForm").addEventListener("submit", function (e) {
 });
 
 // ==========================
-// NEW RSVP FORM + CSV EXPORT
+// Static RSVP Form + CSV Export
 // ==========================
 const rsvpResponses = [];
 
