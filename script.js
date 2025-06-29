@@ -1,4 +1,6 @@
 // Author: Shehryar
+
+// Handle poll form
 document.getElementById("pollForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -80,4 +82,41 @@ document.getElementById("pollForm").addEventListener("submit", function (e) {
       inviteeForm.reset();
     });
   }, 100);
+});
+
+// ==========================
+// NEW RSVP FORM + CSV EXPORT
+// ==========================
+const rsvpResponses = [];
+
+document.getElementById("inviteForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const rsvp = document.getElementById("rsvp").value;
+
+  if (name && rsvp) {
+    rsvpResponses.push({ name, rsvp });
+    alert("RSVP response recorded!");
+
+    document.getElementById("name").value = "";
+    document.getElementById("rsvp").value = "";
+  }
+});
+
+document.getElementById("downloadBtn").addEventListener("click", function () {
+  if (rsvpResponses.length === 0) {
+    alert("No RSVP responses to export.");
+    return;
+  }
+
+  const csvHeader = "Name,RSVP\n";
+  const csvRows = rsvpResponses.map((r) => `${r.name},${r.rsvp}`).join("\n");
+  const blob = new Blob([csvHeader + csvRows], { type: "text/csv" });
+
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "invite_responses.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
 });

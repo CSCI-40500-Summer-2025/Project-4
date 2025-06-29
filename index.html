@@ -30,8 +30,26 @@
     <button type="submit">Submit</button>
   </form>
 
-  <!-- Where results and invitee form will go -->
   <div id="result" style="margin-top: 20px;"></div>
+
+  <hr />
+
+  <h2>Invite RSVP Form</h2>
+  <form id="inviteForm">
+    <label for="name">Invitee Name:</label><br />
+    <input type="text" id="name" required /><br /><br />
+
+    <label for="rsvp">RSVP:</label><br />
+    <select id="rsvp" required>
+      <option value="">--Select--</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br /><br />
+
+    <button type="submit">Submit RSVP</button>
+  </form>
+
+  <button id="downloadBtn">Download CSV</button>
 
   <script src="script.js"></script>
 </body>
