@@ -1,0 +1,138 @@
+/*
+ * File: style.css
+ * Author: Ragib Asif
+ * Email: ragib.asif30@myhunter.cuny.edu
+ * GitHub: https://github.com/ragibasif
+ * LinkedIn: https://www.linkedin.com/in/ragibasif/
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2025 Ragib Asif
+ * Version 1.0.0
+ */
+
+:root {
+  --white: #e5e5e5ff;
+  --black: #1a1918ff;
+  /* --red: #d92525ff;
+  --green: #4f772dff;
+  --blue: #023e8aff; */
+  --box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 1rem;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: transparent;
+  border: 0.1rem solid var(--white);
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.external-link:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.external-link:active {
+  transform: translateY(0);
+  box-shadow: var(--box-shadow);
+}
+
+.external-link::after {
+  content: "→";
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.external-link:hover::after {
+  transform: translateX(3px);
+}
+
+/* header,
+main,
+footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+} */
+
+header,
+main,
+footer {
+  height: 50%;
+  width: 50%;
+}
+
+/* Responsive Settings */
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header,
+  main,
+  footer {
+    height: 100%;
+    width: 100%;
+  }
+}

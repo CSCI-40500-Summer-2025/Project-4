@@ -1,38 +1,33 @@
-<!-- Author: Shehryar -->
+<!-- /*
+ * File: style.css
+ * Author: Ragib Asif
+ * Email: ragib.asif30@myhunter.cuny.edu
+ * GitHub: https://github.com/ragibasif
+ * LinkedIn: https://www.linkedin.com/in/ragibasif/
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2025 Ragib Asif
+ * Version 1.0.0
+ */ -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DatePoll Prototype</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>Event Availability Poll</h1>
-
-  <form id="pollForm">
-    <label for="organizerName">Organizer Name:</label><br />
-    <input type="text" id="organizerName" name="organizerName" required /><br /><br />
-
-    <label for="eventTitle">Event Title:</label><br />
-    <input type="text" id="eventTitle" name="eventTitle" required /><br /><br />
-
-    <label for="dates">Enter Possible Dates (one per line):</label><br />
-    <textarea
-      id="dates"
-      name="dates"
-      rows="5"
-      cols="40"
-      placeholder="e.g., June 10\nJune 12\nJune 15"
-      required
-    ></textarea><br /><br />
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- Where results and invitee form will go -->
-  <div id="result" style="margin-top: 20px;"></div>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
+    <title>Project 4</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header id="header-container"></header>
+    <main id="main-container">
+      <!-- <nav id="navigation-container"></nav> -->
+    </main>
+    <footer id="footer-container">
+      <div id="socials-container"></div>
+      <div id="copyright-container"></div>
+    </footer>
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>
