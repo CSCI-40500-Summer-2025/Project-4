@@ -42,7 +42,8 @@ const renderSocials = function () {
 
 const renderCopyright = function () {
   const copyrightText = document.createElement("p");
-  copyrightText.innerHTML = `&copy; ${YEAR} ${NAME}. All rights reserved.`;
+  // copyrightText.innerHTML = `&copy; ${YEAR} ${NAME}. All rights reserved.`;
+  copyrightText.innerHTML = `&copy; ${YEAR}. All rights reserved.`;
   const copyrightContainer = document.getElementById(CONTAINERS.copyright);
   copyrightContainer.append(copyrightText);
 };
