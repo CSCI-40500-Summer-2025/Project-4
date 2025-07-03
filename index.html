@@ -1,4 +1,3 @@
-<!-- Author: Shehryar -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +9,11 @@
 <body>
   <h1>DatePoll Prototype</h1>
 
-  <!-- Toggle Buttons -->
   <div>
     <button onclick="showOrganizer()">Organizer View</button>
     <button onclick="showInvitee()">Invitee View</button>
   </div>
 
-  <!-- Organizer Section -->
   <div id="organizerSection">
     <h2>Organizer Setup</h2>
     <form id="pollForm">
@@ -26,40 +23,27 @@
       <label for="eventTitle">Event Title:</label><br />
       <input type="text" id="eventTitle" name="eventTitle" required /><br /><br />
 
-      <label for="dates">Enter Possible Dates (one per line):</label><br />
+      <label for="dates">Enter Possible Dates (one per line, e.g., MM/DD/YYYY):</label><br />
       <textarea
         id="dates"
         name="dates"
         rows="5"
         cols="40"
-        placeholder="e.g., June 10\nJune 12\nJune 15"
+        placeholder="e.g., 06/10/2025\n06/12/2025\n06/15/2025"
         required
       ></textarea><br /><br />
 
       <button type="submit">Create Poll</button>
     </form>
 
-    <div id="result" style="margin-top: 20px;"></div>
+    <div id="result" class="result-section"></div>
+    <button id="downloadBtn" class="download-btn" disabled>Download CSV</button>
   </div>
 
-  <!-- Invitee Section -->
   <div id="inviteeSection" style="display: none;">
     <h2>Invite RSVP Form</h2>
-    <form id="inviteForm">
-      <label for="name">Invitee Name:</label><br />
-      <input type="text" id="name" required /><br /><br />
-
-      <label for="rsvp">RSVP:</label><br />
-      <select id="rsvp" required>
-        <option value="">--Select--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select><br /><br />
-
-      <button type="submit">Submit RSVP</button>
-    </form>
-
-    <button id="downloadBtn">Download CSV</button>
+    <form id="inviteForm"></form>
+    <div id="inviteeResult" class="result-section"></div>
   </div>
 
   <script src="script.js"></script>
