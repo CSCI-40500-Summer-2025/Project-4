@@ -55,7 +55,7 @@
 #   Hide                            Hide the subsequent commands from the output
 #   Show                            Show the subsequent commands in the output
 
-Output demo.gif
+Output output_txt.gif
 
 Require echo
 
@@ -74,6 +74,8 @@ Sleep 500ms Enter Sleep 500ms
 Type "10" Sleep 500ms Enter Sleep 500ms
 Type "9" Sleep 500ms Enter Sleep 500ms
 Type "6" Sleep 500ms Enter Sleep 500ms
+Type "y" Sleep 500ms Enter Sleep 500ms
+Type "cat output.txt" Sleep 500ms Enter Sleep 500ms
 
 
 Sleep 5s
