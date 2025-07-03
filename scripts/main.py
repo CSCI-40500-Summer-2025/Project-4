@@ -4,12 +4,11 @@
 # File: person.py
 # Author: Ragib Asif, Jason Ongjoco
 #
-# Person class module.
 #
 
 from data import import_data
 from person import Person
-from report import generate_report
+from report import generate_report, report
 
 
 def people_create() -> list[Person]:
@@ -51,7 +50,8 @@ def change_weights(people: list[Person]) -> list[Person]:
             if change_weight >= 0 and change_weight <= 10:
                 person.set_weight(change_weight)
                 print(
-                    f"Updated {person.get_name()} from {old_weight} to {person.get_weight()} \n")
+                    f"Updated {person.get_name()} from {old_weight} to {person.get_weight()} \n"
+                )
         new_people.append(person)
     people = new_people
     return people
@@ -61,7 +61,7 @@ def main() -> None:
     """Entry point of the program."""
 
     people: list[Person] = people_create()
-    generate_report(people=people)
+    report(generate_report(people))
 
 
 if __name__ == "__main__":

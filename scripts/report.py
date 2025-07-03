@@ -15,9 +15,7 @@ def attendance(people: list[Person]) -> None:
     num_dates = len(people[0].get_bools()) if people else 0
 
     for date_idx in range(num_dates):
-        present_count = sum(
-            1 for person in people if person.get_bools()[date_idx] == 1
-        )
+        present_count = sum(1 for person in people if person.get_bools()[date_idx] == 1)
         total_people = len(people)
         print(f"Date {date_idx + 1}: {present_count} of {total_people} available.")
 
@@ -60,10 +58,8 @@ def generate_flags(people: list[Person], date_idx: int) -> str:
     return " | ".join(flags) if flags else ""
 
 
-def generate_report(people: list[Person]) -> None:
+def generate_report(people: list[Person]) -> list[str]:
 
-    # get date labels from data cache
-    # bool_labels = get_bool_labels()
     bool_labels = get_bool_labels()
 
     if not people:
@@ -72,12 +68,12 @@ def generate_report(people: list[Person]) -> None:
 
     num_dates = len(people[0].get_bools()) if people else 0
 
-    print("\n--- Attendance Report ---")
+    output_lines: list[str] = []
+
+    output_lines.append("--- Attendance Report ---")
     for date_idx in range(num_dates):
         # Attendance (x of y)
-        present_count = sum(
-            1 for person in people if person.get_bools()[date_idx] == 1
-        )
+        present_count = sum(1 for person in people if person.get_bools()[date_idx] == 1)
         total_people = len(people)
 
         # avg score for this date/index, exclude 0's
@@ -93,8 +89,20 @@ def generate_report(people: list[Person]) -> None:
         # pull flags for current date index
         flags = generate_flags(people, date_idx)
 
-        print(
+        line = (
             f"{bool_labels[date_idx]}: {present_count} of {total_people} available. | "
             f"Average Score: {avg_score:.1f} | "
             f"{flags}"
         )
+        output_lines.append(line)
+    return "\n".join(output_lines)
+
+
+def report(report: list[str]):
+    print("\n")
+    print(report)
+    output_to_file = input("To write the output to a file, type 'y or 'Y': ")
+
+    if output_to_file == "y" or output_to_file == "Y":
+        with open("output.txt", "w") as f:
+            f.write(report)
