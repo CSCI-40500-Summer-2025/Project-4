@@ -1,109 +1,142 @@
-/* Reset and Base Styles */
-* {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7fa;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-  margin: 20px;
-  color: #333;
   line-height: 1.6;
+  color: #333;
 }
 
-/* Header and Navigation */
-h1 {
+.header {
+  background-color: #2c3e50;
+  color: white;
   text-align: center;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 2.5em;
+  padding: 20px 0;
 }
 
-button {
-  padding: 12px 25px;
-  margin: 5px;
+.title {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.nav-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn {
   background-color: #3498db;
   color: white;
   border: none;
-  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
   font-size: 1em;
+  transition: background-color 0.3s;
 }
 
-button:hover {
+.btn:hover {
   background-color: #2980b9;
-  transform: translateY(-2px);
 }
 
-button:disabled {
+.submit-btn {
+  background-color: #2ecc71;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+.download-btn {
+  background-color: #e74c3c;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+.download-btn:hover {
+  background-color: #c0392b;
+}
+
+.download-btn:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
 }
 
-/* Forms and Sections */
-#organizerSection, #inviteeSection {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-#organizerSection:hover, #inviteeSection:hover {
-  transform: scale(1.02);
+.section-title {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.5em;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-label {
-  font-weight: bold;
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
   color: #34495e;
 }
 
-input, textarea, select {
+.form-group input,
+.form-group textarea,
+.form-group select {
   padding: 10px;
-  border: 2px solid #ecf0f1;
+  border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1em;
-  width: 100%;
-  transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus, select:focus {
-  border-color: #3498db;
-  outline: none;
-}
-
-textarea {
+.form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  line-height: 1.5; /* Improves readability of multiline text */
 }
 
-/* Result and Response Sections */
-.result-section {
-  margin-top: 20px;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+.result {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+}
+
+.result ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.result li {
+  margin: 5px 0;
 }
 
 .response-item {
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 10px;
   background: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 5px;
   border-left: 5px solid #3498db;
 }
 
@@ -122,33 +155,17 @@ textarea {
   color: #7f8c8d;
 }
 
-/* Download Button */
-.download-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background-color: #2ecc71;
-  border-radius: 25px;
-  font-size: 1em;
-}
-
-.download-btn:hover {
-  background-color: #27ae60;
-  transform: translateY(-2px);
-}
-
-/* Responsive Design */
 @media (max-width: 600px) {
-  #organizerSection, #inviteeSection {
-    padding: 20px;
-    margin: 0 10px;
+  .container {
+    margin: 10px;
   }
 
-  button {
+  .btn {
     width: 100%;
     margin: 5px 0;
   }
 
-  h1 {
-    font-size: 2em;
+  .section {
+    padding: 15px;
   }
 }
