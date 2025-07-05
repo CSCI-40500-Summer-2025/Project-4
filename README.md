@@ -4,7 +4,59 @@
 
 For event organizers or management teams who need to find a common date for an event for any number of people, the SORT Event Resource (SORTER), is a web based availability tool for groups that provides **simple** tools to invitees, and **significantly more robust** options for organizers, unlike other services such as WhenAvailable or DatePoll. Our product provides weighting **and** comparison in order to prioritize participants based on the meaningfulness of their contribution  while providing an obfuscated front end that is more friendly to attendees.
 
-## Prototype Concept
+## Architecture
+
+### Most Important Qualities of Our Software
+
+1. Software compatibility.
+    - Users need to be able to use our product regardless of what platform they are on AND whether they have internet access or not. 
+2. Product lifetime.
+    - Users who purchase our product instead of our subscription should have full functionality at the time of purchase without expiring features or limited compatability.
+    - Users who use our subscription service should be given options that are both worth paying for, and beat our competitors for functionality.
+3. Software reuse.
+    - We want our base product to remain the same, a simple uncluttered tool for organizing events. Once we add features, we want to ensure that users have an improved experience over the base, not feeling like they are using an entirely new product.
+    - If users want the product to include additional functions related to its scope, instead of changing the original product, we will create a platform or line instead of forcing all users to change how they use the original product
+
+### Architecture Layers
+
+- User interface
+  - Web and mobile browsers focused on ease of use and similar experience.
+  - Desktop application for standalone handling.
+- UI Management
+  - Multiple UI formats based on needs (Simple/Intermediate/Advanced)
+  - Optional add-on modules based on needs (Additional fields w or w/o weights)
+- Configuration Services
+  - Security configuration (Share/Hide data and/or results from participants)
+  - Setup service (Recommended use based on events)
+- Application Services
+  - Graphical reporting
+  - Email/messaging for responses
+- Integrated Resources
+  - "How To" modules for event planning (Size, budget, venues, etc.)
+- SVhared Infrastructure Services
+  - Optional User Storage
+  - Optional Search (For similar event templates)
+  - Optional Logging/Monitoring (For RSVP changes)
+
+### Required Technologies
+
+- Database
+  - No database required for portable base product. Data stored as .csv, maintained by user
+  - Relational SQL database for similar structure and ease of conversion 
+- Platform/Delivery
+  - Desktop application, portable
+  - Web interface
+- Server
+  - Initial deployment may use in-house servers due to application's low bandwidth requirements.
+  - Increased user base/traffic may move to cloud services for ease of maintenance
+- Open-source/Licensing
+  - No issues at this time.
+- Development Tools
+  - No limited to architectural choices at this time.
+
+
+
+## Prototype Use
 
 You are organizing a small event. We have provided hypothetical RSVP data for a small number of people.
 This tool is also ready for use with your own RSVP data taken directly from a Google Form.
