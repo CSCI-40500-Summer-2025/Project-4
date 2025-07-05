@@ -33,7 +33,7 @@ For event organizers or management teams who need to find a common date for an e
   - Email/messaging for responses
 - Integrated Resources
   - "How To" modules for event planning (Size, budget, venues, etc.)
-- SVhared Infrastructure Services
+- Shared Infrastructure Services
   - Optional User Storage
   - Optional Search (For similar event templates)
   - Optional Logging/Monitoring (For RSVP changes)
@@ -41,19 +41,18 @@ For event organizers or management teams who need to find a common date for an e
 ### Required Technologies
 
 - Database
-  - No database required for portable base product. Data stored as .csv, maintained by user
-  - Relational SQL database for similar structure and ease of conversion 
+  - Users will be given the option to store their data locally or remotely in a SQL database
 - Platform/Delivery
   - Desktop application, portable
   - Web interface
 - Server
   - Initial deployment may use in-house servers due to application's low bandwidth requirements.
   - Increased user base/traffic may move to cloud services for ease of maintenance
+  - AWS/Azure server deployment as needed
 - Open-source/Licensing
-  - No issues at this time.
+  - Closed source, proprietary software.
 - Development Tools
-  - No limited to architectural choices at this time.
-
+  - PostgreSQL for the database, reactjs for the frontend, Flask or Node for the backend
 
 
 ## Prototype Use
