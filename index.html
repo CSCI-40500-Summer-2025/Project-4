@@ -1,37 +1,51 @@
-<!-- Author: Shehryar -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DatePoll Prototype</title>
+  <title>SORTER</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Event Availability Poll</h1>
+  <header class="header">
+    <h1 class="title">SORTER</h1>
+  </header>
 
-  <form id="pollForm">
-    <label for="organizerName">Organizer Name:</label><br />
-    <input type="text" id="organizerName" name="organizerName" required /><br /><br />
+  <div class="container">
+    <div class="nav-buttons">
+      <button onclick="showOrganizer()" class="btn">Organizer View</button>
+      <button onclick="showInvitee()" class="btn">Invitee View</button>
+    </div>
 
-    <label for="eventTitle">Event Title:</label><br />
-    <input type="text" id="eventTitle" name="eventTitle" required /><br /><br />
+    <div id="organizerSection" class="section">
+      <h2 class="section-title">Organizer Setup</h2>
+      <form id="pollForm" class="form">
+        <div class="form-group">
+          <label for="organizerName">Organizer Name:</label>
+          <input type="text" id="organizerName" name="organizerName" required />
+        </div>
+        <div class="form-group">
+          <label for="eventTitle">Event Title:</label>
+          <input type="text" id="eventTitle" name="eventTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="dates">Enter Possible Dates (one per line):</label>
+          <textarea id="dates" name="dates" rows="5" cols="40" placeholder="June 10, 2025
+June 12, 2025
+June 15, 2025" required></textarea>
+        </div>
+        <button type="submit" class="btn submit-btn">Create Poll</button>
+      </form>
+      <div id="result" class="result"></div>
+      <button id="downloadBtn" class="btn download-btn" disabled>Download CSV</button>
+    </div>
 
-    <label for="dates">Enter Possible Dates (one per line):</label><br />
-    <textarea
-      id="dates"
-      name="dates"
-      rows="5"
-      cols="40"
-      placeholder="e.g., June 10\nJune 12\nJune 15"
-      required
-    ></textarea><br /><br />
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- Where results and invitee form will go -->
-  <div id="result" style="margin-top: 20px;"></div>
+    <div id="inviteeSection" class="section" style="display: none;">
+      <h2 class="section-title">Invite RSVP Form</h2>
+      <form id="inviteForm" class="form"></form>
+      <div id="inviteeResult" class="result"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
